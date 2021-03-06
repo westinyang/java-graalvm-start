@@ -1,5 +1,10 @@
 # java-graalvm-start
 
+- [Gitee](https://gitee.com/westinyang/java-graalvm-start)
+- [Gtihub](https://github.com/westinyang/java-graalvm-start)
+
+[English document](README.en.md)
+
 ## 介绍
 
 GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项目，并使用native-image技术把Java代码静态编译为独立可执行文件（本机映像）。
@@ -7,6 +12,8 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项
 ## 模块概览
 
 > 其中的性能测试结果与机器配置有关，尤其是 `native-image` 编译耗时。
+>
+> 体验我已经编译好的可执行文件，[点此下载]()。  
 
 | ↓标签 \ 模块→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |

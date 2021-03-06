@@ -1,11 +1,18 @@
 # java-graalvm-start
 
+- [Gitee](https://gitee.com/westinyang/java-graalvm-start)
+- [Gtihub](https://github.com/westinyang/java-graalvm-start)
+
+[中文文档](README.md)
+
 ## Description
 Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (String Boot) projects, and use native-image technology to statically compile Java code into independent executable files (native images).
 
 ## Module overview
 
 > The performance test results are related to the machine configuration, especially the time-consuming compilation of `native-image`.
+>
+> To experience the executable file I have compiled, [click here to download]().
 
 | ↓Tag \ Module→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
