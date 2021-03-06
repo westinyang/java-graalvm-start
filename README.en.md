@@ -12,7 +12,7 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (String 
 
 > The performance test results are related to the machine configuration, especially the time-consuming compilation of `native-image`.
 >
-> To experience the executable file I have compiled, [click here to download](/westinyang/java-graalvm-start/releases/v1.0).
+> To experience the executable file I have compiled, [click here to download](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0).
 
 | ↓Tag \ Module→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |

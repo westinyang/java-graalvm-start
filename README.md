@@ -13,7 +13,7 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项
 
 > 其中的性能测试结果与机器配置有关，尤其是 `native-image` 编译耗时。
 >
-> 体验我已经编译好的可执行文件，[点此下载](/westinyang/java-graalvm-start/releases/v1.0)。  
+> 体验我已经编译好的可执行文件，[点此下载](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0)。  
 
 | ↓标签 \ 模块→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
