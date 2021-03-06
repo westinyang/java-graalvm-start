@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GraalVM & SpringBoot</title>
+</head>
+<body>
+    <img src="/image/graalvm-logo.png">
+    &emsp;
+    <img src="/image/spring-logo.png">
+
+    <h1>Hello GraalVM SpringBoot Web Application</h1>
+
+    <ul>
+        <li><a href="/">/</a></li>
+        <li><a href="/hello/GraalVM">/hello/{name}</a></li>
+    </ul>
+
+    <!-- Scripts -->
+    <script>
+        var autoclose = getUrlParam("autoclose");
+        if (autoclose) {
+            checkIfServerIsDown();
+        }
+
+        // 检查服务器是否关闭，如果关闭则自动关闭当前页签
+        function checkIfServerIsDown() {
+            setInterval(function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "/", true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200 || xhr.status === 304) {
+                        var data = xhr.responseText;
+                    }
+                };
+                xhr.onerror = function (e) {
+                    open(location, '_self').close();
+                };
+                xhr.send();
+            }, 1000);
+        }
+
+        // 获取网址参数
+        function getUrlParam (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    </script>
+</body>
+</html>

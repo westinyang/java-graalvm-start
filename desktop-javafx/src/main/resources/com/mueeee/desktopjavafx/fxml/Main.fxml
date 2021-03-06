@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mueeee.desktopjavafx.ctrl.MainCtrl">
+   <children>
+      <Button fx:id="btnAlert" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtnAlertClick" text="提示框" />
+      <Button fx:id="btnChooseFile" layoutX="79.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtnChooseFileClick" text="选择文件" />
+   </children>
+</Pane>
