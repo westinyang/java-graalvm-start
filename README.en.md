@@ -97,7 +97,9 @@ Download Graal VM and configure environment variables. In addition to Graal VM, 
 
 - TODO
 
-For a more detailed description of different platform configurations and dependencies, please refer to: [Gluon Documentation](https://docs.gluonhq.com/#_platforms)
+For a more detailed description of different platform configurations and dependencies, please refer to:
+- [install-native-image](https://www.graalvm.org/reference-manual/native-image/#install-native-image) `Reference when building Java applications`
+- [gluon documentation](https://docs.gluonhq.com/#_platforms) `Reference when building JavaFx applications`
 
 > tips：Gluon is a contributor to the `OpenJFX` project and the `GraalVM` project. The company provides `client-maven-plugin` to encapsulate the related commands of `native-image`, which simplifies the packaging operation.
 

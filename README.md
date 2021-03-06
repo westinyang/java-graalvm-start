@@ -98,7 +98,9 @@ native-image --version
 
 - TODO
 
-有关不同平台配置和依赖更详细的说明，请参考：[Gluon Documentation](https://docs.gluonhq.com/#_platforms)
+有关不同平台配置和依赖更详细的说明，请参考：
+- [install-native-image](https://www.graalvm.org/reference-manual/native-image/#install-native-image) `构建Java应用时参考`
+- [gluon documentation](https://docs.gluonhq.com/#_platforms) `构建JavaFx应用时参考`
 
 > tips：Gluon公司是 `OpenJFX` 项目和 `GraalVM` 项目的贡献者，该公司提供了 `client-maven-plugin ` 封装了 `native-image` 的相关命令，简化了打包操作。
 
