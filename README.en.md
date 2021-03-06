@@ -92,6 +92,11 @@ Download Graal VM and configure environment variables. In addition to Graal VM, 
 
 - gcc version 6 or higher
 - ld version 2.26 or higher
+- Ubuntu 18 also needs to install the following libraries (I have tested it in the Linux subsystem):
+```shell script
+sudo apt install pkg-config libgl-dev libglib2.0-dev libgtk-3-dev libpango1.0-dev libx11-dev libxtst-dev libasound2-dev libavcodec-dev libavformat-dev libavutil-dev
+```
+- For other Linux distributions, please check which dependent libraries are missing for errors when packaging, and install them yourself.
 
 **Mac**
 

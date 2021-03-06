@@ -93,6 +93,11 @@ native-image --version
 
 - gcc 6 或更高版本
 - ld 2.26 或更高版本
+- Ubuntu 18 还需要安装以下这些库（我在Linux子系统中已经测试通过）：
+```shell script
+sudo apt install pkg-config libgl-dev libglib2.0-dev libgtk-3-dev libpango1.0-dev libx11-dev libxtst-dev libasound2-dev libavcodec-dev libavformat-dev libavutil-dev
+```
+- 其他Linux发行版，请在打包时查看错误都缺少哪些依赖库，自行安装。
 
 **Mac**
 
