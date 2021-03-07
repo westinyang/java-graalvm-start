@@ -9,11 +9,13 @@
 
 GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项目，并使用native-image技术把Java代码静态编译为独立可执行文件（本机映像）。
 
+> GraalVM让Java再次变得强大，使用native-image把程序编译为目标平台的可执行文件，脱离jvm直接运行，启动速度飞快，内存负载也很低。
+
 ## 模块概览
 
-> 其中的性能测试结果与机器配置有关，尤其是 `native-image` 编译耗时。
+> 体验我已经编译好的可执行文件（Windows、Linux、Mac），[点此下载](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0)。  
 >
-> 体验我已经编译好的可执行文件（Windows、Linux），[点此下载](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0)。  
+> 下面的性能测试结果是在我本机Windows上测试的，测试结果与机器配置有关，尤其是 `native-image` 编译耗时。
 
 | ↓标签 \ 模块→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
@@ -22,7 +24,9 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项
 | GraalVM | CE-21.0.0.2+ | CE-21.0.0.2+ | CE-21.0.0.2+ |
 | Maven Plugin | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) | [client-maven-plugin](https://docs.gluonhq.com/#_the_gluon_client_plugin_for_maven) | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) |
 | 启动耗时（jvm） | 0.713s | 2.555s | 1.793s |
-| 启动耗时（native-image） | 0.047s | 0.665s | 0.216s |
+| **启动耗时（native-image）** | **0.047s** | **0.665s** | **0.216s** |
+| 内存负载（jvm） | 38.8m | 309.3m | 440.5m |
+| **内存负载（native-image）** | **3.1m** | **60.4m** | **70.2m** |
 | 编译耗时（native-image） | 24.786s | 93.455s | 99.434s |
 | 可执行文件大小（7z压缩） | 8.03m (7z : 1.68m) | 62.7m (7z : 13.1m) | 66.5m (7z : 13.9m) |
 

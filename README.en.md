@@ -6,13 +6,16 @@
 [中文文档](README.md)
 
 ## Description
+
 Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (String Boot) projects, and use native-image technology to statically compile Java code into independent executable files (native images).
+
+> Graal VM makes Java powerful again, using native-image to compile the program into an executable file of the target platform, and run directly without jvm, the startup speed is very fast, and the memory load is also very low.
 
 ## Module overview
 
-> The performance test results are related to the machine configuration, especially the time-consuming compilation of `native-image`.
->
-> To experience the executable file I have compiled (Windows, Linux), [click here to download](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0).
+> To experience the executable file I have compiled (Windows, Linux, Mac), [click here to download](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0).
+> 
+> The following performance test results are tested on my native Windows. The test results are related to the machine configuration, especially the time-consuming compilation of `native-image`.
 
 | ↓Tag \ Module→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
@@ -21,7 +24,9 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (String 
 | GraalVM | CE-21.0.0.2+ | CE-21.0.0.2+ | CE-21.0.0.2+ |
 | Maven Plugin | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) | [client-maven-plugin](https://docs.gluonhq.com/#_the_gluon_client_plugin_for_maven) | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) |
 | Time-consuming to start (jvm) | 0.713s | 2.555s | 1.793s |
-| Time-consuming to start (native-image) | 0.047s | 0.665s | 0.216s |
+| **Time-consuming to start (native-image)** | **0.047s** | **0.665s** | **0.216s** |
+| Memory load（jvm） | 38.8m | 309.3m | 440.5m |
+| **Memory load（native-image）** | **3.1m** | **60.4m** | **70.2m** |
 | Time-consuming to start (native-image) | 24.786s | 93.455s | 99.434s |
 | Executable file size (7z compression) | 8.03m (7z : 1.68m) | 62.7m (7z : 13.1m) | 66.5m (7z : 13.9m) | 
 
