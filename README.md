@@ -7,7 +7,7 @@
 
 ## 介绍
 
-GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(StringBoot)项目，并使用native-image技术把Java代码静态编译为独立可执行文件（本机映像）。
+GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项目，并使用native-image技术把Java代码静态编译为独立可执行文件（本机映像）。
 
 > GraalVM让Java再次变得强大，使用native-image把程序编译为目标平台的可执行文件，脱离jvm直接运行，启动速度飞快，内存负载也很低。
 

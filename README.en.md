@@ -7,7 +7,7 @@
 
 ## Description
 
-Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (String Boot) projects, and use native-image technology to statically compile Java code into independent executable files (native images).
+Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring Boot) projects, and use native-image technology to statically compile Java code into independent executable files (native images).
 
 > Graal VM makes Java powerful again, using native-image to compile the program into an executable file of the target platform, and run directly without jvm, the startup speed is very fast, and the memory load is also very low.
 
