@@ -11,6 +11,21 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 
 > GraalVM让Java再次变得强大，使用native-image把程序编译为目标平台的可执行文件，脱离jvm直接运行，启动速度飞快，内存负载也很低。
 
+## 更新日志
+
+> 时隔九个月，再次关注GraalVM，发现以前实验性的Maven插件大多都已经变更，更新记录一波~  
+> 如果需要参考旧版代码，请手动切换到 `graalvm-21.0.0.2` 标签。  
+> 另外最近刚换了台12代U `i7 12700KF` 的主机，实测比我之前用的 `i7 7700` 编译速度快了2倍还要多，比如 `cli-normal` 模块实测编译耗时10s左右。下面模块概览内的测试数据暂时就不改了，还是之前机器的测试数据。
+
+- **2021-03-05** GraalVM-21.0.0.2 (Java 8 or Java 11) `首次提交`
+    - org.graalvm.nativeimage/native-image-maven-plugin:21.0.0.2 `cli`
+    - com.gluonhq/client-maven-plugin:0.1.38 `javafx 15.0.1`
+    - org.springframework.experimental/spring-graalvm-native:0.8.5 `springboot 2.4.3`
+- **2021-12-10** GraalVM-21.3.0 (Java 11 or Java 17)
+    - [org.graalvm.buildtools/native-maven-plugin:0.9.8](https://graalvm.github.io/native-build-tools/latest/index.html) `cli`
+    - [com.gluonhq/gluonfx-maven-plugin:1.0.10](https://docs.gluonhq.com/#_gluonfx_plugin_for_maven) `javafx 17.0.1`
+    - [org.springframework.experimental/spring-native:0.11.0](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/index.html) `springboot 2.6.1`
+
 ## 模块概览
 
 > 体验我已经编译好的可执行文件（Windows、Linux、Mac），[点此下载](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0)。  
@@ -20,9 +35,9 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 | ↓标签 \ 模块→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
 | 模块描述 | 命令行应用（无框架） | 桌面应用（JavaFx） | Web应用（SpringBoot） |
-| JDK | 8 or 11+ | 11+ | 8 or 11+ |
-| GraalVM | CE-21.0.0.2+ | CE-21.0.0.2+ | CE-21.0.0.2+ |
-| Maven Plugin | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) | [client-maven-plugin](https://docs.gluonhq.com/#_the_gluon_client_plugin_for_maven) | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) |
+| JDK | 11 or 17 | 11 or 17 | 11 or 17 |
+| GraalVM | CE-21.3.0 | CE-21.3.0 | CE-21.3.0 |
+| Maven Plugin | native-maven-plugin | gluonfx-maven-plugin | spring-native | 
 | 启动耗时（jvm） | 0.713s | 2.555s | 1.793s |
 | **启动耗时（native-image）** | **0.047s** | **0.665s** | **0.216s** |
 | 内存负载（jvm） | 38.8m | 309.3m | 440.5m |
@@ -37,7 +52,7 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 - Windows 10 (CPU: i7-7700, RAM: 16G)
 - IntelliJ IDEA 2020
 - jdk-11.0.10 `其实也可以不用，因为GraalVM是自带OpenJDK的`
-- graalvm-ce-java11-21.0.0.2
+- graalvm-ce-java11-21.3.0
 - Visual Sutdio 2019
 
 ## 环境配置（Windows）
@@ -45,19 +60,19 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 > System、IDE、JDK 这三个就不用说了，直接跳过...
 
 **Graal VM**
-- [下载 Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.0.0.2)
+- [下载 Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0)
 - 设置GraalVM环境变量（注意JAVA_HOME也要指向GRAALVM_HOME）：
 ``` bat
-GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.0.0.2
+GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.3.0
 JAVA_HOME = %GRAALVM_HOME%
 PATH += %GRAALVM_HOME%\bin
 ```
 - 验证环境 `java -version`
 ```
 C:\Users\Administrator>java -version
-openjdk version "11.0.10" 2021-01-19
-OpenJDK Runtime Environment GraalVM CE 21.0.0.2 (build 11.0.10+8-jvmci-21.0-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.0.2 (build 11.0.10+8-jvmci-21.0-b06, mixed mode, sharing)
+openjdk version "11.0.13" 2021-10-19
+OpenJDK Runtime Environment GraalVM CE 21.3.0 (build 11.0.13+7-jvmci-21.3-b05)
+OpenJDK 64-Bit Server VM GraalVM CE 21.3.0 (build 11.0.13+7-jvmci-21.3-b05, mixed mode, sharing)
 ```
 - 安装native-image组件
 ``` bat

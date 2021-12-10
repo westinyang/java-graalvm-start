@@ -18,7 +18,7 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <javafx.version>15.0.1</javafx.version>
+        <javafx.version>17.0.1</javafx.version>
         <client-maven-plugin.version>0.1.38</client-maven-plugin.version>
         <start-class>com.mueeee.desktopjavafx.App</start-class>
     </properties>
@@ -48,10 +48,9 @@
             </plugin>
             <plugin>
                 <groupId>com.gluonhq</groupId>
-                <artifactId>client-maven-plugin</artifactId>
-                <version>${client-maven-plugin.version}</version>
+                <artifactId>gluonfx-maven-plugin</artifactId>
+                <version>1.0.10</version>
                 <configuration>
-                    <target>host</target>
                     <mainClass>${start-class}</mainClass>
                     <!-- JavaFx 中使用 ResourceBundle.getBundle("xxxxxx") 的路径，如果没有则不需要配置 -->
                     <!--<bundlesList>

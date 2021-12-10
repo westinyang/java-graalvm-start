@@ -11,6 +11,21 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 
 > Graal VM makes Java powerful again, using native-image to compile the program into an executable file of the target platform, and run directly without jvm, the startup speed is very fast, and the memory load is also very low.
 
+## Update log
+
+> After nine months, I paid attention to Graal VM again and found that most of the previous experimental Maven plugins have been changed, and there is a wave of update records~  
+> If you need to refer to the old version of the code, please manually switch to the `graalvm-21.0.0.2` tag.  
+> In addition, I just changed the 12th generation U `i7 12700KF` host. The actual test is more than 2 times faster than the `i7 7700` I used before. For example, the measured compilation time of the `cli-normal` module takes about 10s. The test data in the module overview below will not be changed for the time being, and it is still the test data of the previous machine.
+
+- **2021-03-05** GraalVM-21.0.0.2 (Java 8 or Java 11) `First submission`
+    - org.graalvm.nativeimage/native-image-maven-plugin:21.0.0.2 `cli`
+    - com.gluonhq/client-maven-plugin:0.1.38 `javafx 15.0.1`
+    - org.springframework.experimental/spring-graalvm-native:0.8.5 `springboot 2.4.3`
+- **2021-12-10** GraalVM-21.3.0 (Java 11 or Java 17)
+    - [org.graalvm.buildtools/native-maven-plugin:0.9.8](https://graalvm.github.io/native-build-tools/latest/index.html) `cli`
+    - [com.gluonhq/gluonfx-maven-plugin:1.0.10](https://docs.gluonhq.com/#_gluonfx_plugin_for_maven) `javafx 17.0.1`
+    - [org.springframework.experimental/spring-native:0.11.0](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/index.html) `springboot 2.6.1`
+
 ## Module overview
 
 > To experience the executable file I have compiled (Windows, Linux, Mac), [click here to download](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0).
@@ -20,9 +35,9 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 | ↓Tag \ Module→ | [cli-normal](cli-normal) | [desktop-javafx](desktop-javafx) | [web-springboot](web-springboot) |
 | ----- | ----- | ----- | ----- |
 | Module desc | Command line app (no framework) | Desktop app (JavaFx) | Web app (SpringBoot) |
-| JDK | 8 or 11+ | 11+ | 8 or 11+ |
-| GraalVM | CE-21.0.0.2+ | CE-21.0.0.2+ | CE-21.0.0.2+ |
-| Maven Plugin | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) | [client-maven-plugin](https://docs.gluonhq.com/#_the_gluon_client_plugin_for_maven) | [native-image-maven-plugin](https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/) |
+| JDK | 11 or 17 | 11 or 17 | 11 or 17 |
+| GraalVM | CE-21.3.0 | CE-21.3.0 | CE-21.3.0 |
+| Maven Plugin | native-maven-plugin | gluonfx-maven-plugin | spring-native |
 | Time-consuming to start (jvm) | 0.713s | 2.555s | 1.793s |
 | **Time-consuming to start (native-image)** | **0.047s** | **0.665s** | **0.216s** |
 | Memory load（jvm） | 38.8m | 309.3m | 440.5m |
@@ -37,7 +52,7 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 - Windows 10 (CPU: i7-7700, RAM: 16G)
 - IntelliJ IDEA 2020
 - jdk-11.0.10 `In fact, you don’t need to, because GraalVM comes with OpenJDK`
-- graalvm-ce-java11-21.0.0.2
+- graalvm-ce-java11-21.3.0
 - Visual Sutdio 2019
 
 ## Environment configuration (Windows)
@@ -45,19 +60,19 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 > Needless to say, System, IDE, and JDK, just skip...
 
 **Graal VM**
-- [Download Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.0.0.2)
+- [Download Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0)
 - Set GraalVM environment variables (note that JAVA_HOME also points to GRAALVM_HOME):
 ``` bat
-GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.0.0.2
+GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.3.0
 JAVA_HOME = %GRAALVM_HOME%
 PATH += %GRAALVM_HOME%\bin
 ```
 - Verify the environment `java -version`
 ```
 C:\Users\Administrator>java -version
-openjdk version "11.0.10" 2021-01-19
-OpenJDK Runtime Environment GraalVM CE 21.0.0.2 (build 11.0.10+8-jvmci-21.0-b06)
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.0.2 (build 11.0.10+8-jvmci-21.0-b06, mixed mode, sharing)
+openjdk version "11.0.13" 2021-10-19
+OpenJDK Runtime Environment GraalVM CE 21.3.0 (build 11.0.13+7-jvmci-21.3-b05)
+OpenJDK 64-Bit Server VM GraalVM CE 21.3.0 (build 11.0.13+7-jvmci-21.3-b05, mixed mode, sharing)
 ```
 - Install native-image components
 ``` bat

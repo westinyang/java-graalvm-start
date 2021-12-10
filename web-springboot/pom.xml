@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.6.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -19,8 +19,9 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <spring-graalvm-native.version>0.8.5</spring-graalvm-native.version>
-        <native-image-maven-plugin.version>21.0.0.2</native-image-maven-plugin.version>
+        <graalvm.version>21.3.0</graalvm.version>
+        <native.maven.plugin.version>0.9.8</native.maven.plugin.version>
+        <spring.native.plugin.version>0.11.0</spring.native.plugin.version>
         <start-class>com.mueeee.webspringboot.WebSpringBootApp</start-class>
     </properties>
 
@@ -44,51 +45,75 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.experimental</groupId>
-            <artifactId>spring-graalvm-native</artifactId>
-            <version>${spring-graalvm-native.version}</version>
+            <artifactId>spring-native</artifactId>
+            <version>${spring.native.plugin.version}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.graalvm.nativeimage</groupId>
-                <artifactId>native-image-maven-plugin</artifactId>
-                <version>${native-image-maven-plugin.version}</version>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>${native.maven.plugin.version}</version>
                 <configuration>
+                    <skip>false</skip>
                     <imageName>${project.artifactId}</imageName>
                     <mainClass>${start-class}</mainClass>
-                    <buildArgs>-H:+ReportExceptionStackTraces -Dspring.native.remove-yaml-support=true -Dspring.spel.ignore=true</buildArgs>
+                    <buildArgs>
+                        --no-fallback
+                    </buildArgs>
                 </configuration>
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>native-image</goal>
+                            <goal>build</goal>
                         </goals>
                         <phase>package</phase>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.springframework.experimental</groupId>
+                <artifactId>spring-aot-maven-plugin</artifactId>
+                <version>${spring.native.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <buildpacks>
+                            <buildpack>gcr.io/paketo-buildpacks/java-native-image:${graalvm.version}</buildpack>
+                        </buildpacks>
+                    </image>
+                </configuration>
             </plugin>
         </plugins>
     </build>
 
     <repositories>
         <repository>
-            <id>spring-milestone</id>
-            <name>Spring milestone</name>
-            <url>https://repo.spring.io/milestone</url>
+            <id>spring-release</id>
+            <name>Spring release</name>
+            <url>https://repo.spring.io/release</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
-            <id>spring-milestone</id>
-            <name>Spring milestone</name>
-            <url>https://repo.spring.io/milestone</url>
+            <id>spring-release</id>
+            <name>Spring release</name>
+            <url>https://repo.spring.io/release</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

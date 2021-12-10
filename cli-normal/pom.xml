@@ -18,7 +18,8 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <graalvm.version>21.0.0.2</graalvm.version>
+        <graalvm.version>21.3.0</graalvm.version>
+        <native.maven.plugin.version>0.9.8</native.maven.plugin.version>
         <start-class>com.mueeee.clinormal.CliNormalApp</start-class>
     </properties>
 
@@ -39,9 +40,9 @@
                 <version>3.8.1</version>
             </plugin>
             <plugin>
-                <groupId>org.graalvm.nativeimage</groupId>
-                <artifactId>native-image-maven-plugin</artifactId>
-                <version>${graalvm.version}</version>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>${native.maven.plugin.version}</version>
                 <configuration>
                     <skip>false</skip>
                     <imageName>${project.artifactId}</imageName>
@@ -50,10 +51,11 @@
                         --no-fallback
                     </buildArgs>
                 </configuration>
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>native-image</goal>
+                            <goal>build</goal>
                         </goals>
                         <phase>package</phase>
                     </execution>
