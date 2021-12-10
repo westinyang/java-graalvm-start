@@ -40,6 +40,31 @@
                 <version>3.8.1</version>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.build.finalName}</finalName>
+                    <archive>
+                        <manifest>
+                            <mainClass>${start-class}</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
                 <version>${native.maven.plugin.version}</version>
@@ -50,6 +75,11 @@
                     <buildArgs>
                         --no-fallback
                     </buildArgs>
+                    <!--
+                    <agent>
+                        <enabled>true</enabled>
+                    </agent>
+                    -->
                 </configuration>
                 <extensions>true</extensions>
                 <executions>

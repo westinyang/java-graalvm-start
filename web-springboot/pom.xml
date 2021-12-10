@@ -78,6 +78,14 @@
                 <groupId>org.springframework.experimental</groupId>
                 <artifactId>spring-aot-maven-plugin</artifactId>
                 <version>${spring.native.plugin.version}</version>
+                <configuration>
+                    <!--
+                    切换插件实际提供给本机图像编译器的配置
+                    - native （默认）生成 AOT Spring 工厂、应用程序上下文引导程序、本机配置、本机图像.properties 以及替换。
+                    - native-agent 旨在与跟踪代理生成的配置一起使用。生成 AOT Spring 工厂、应用程序上下文引导程序、native-image.properties 以及替换。
+                    -->
+                    <mode>native</mode>
+                </configuration>
                 <executions>
                     <execution>
                         <id>generate</id>
