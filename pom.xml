@@ -20,6 +20,8 @@
         <module>cli-normal</module>
         <module>desktop-javafx</module>
         <module>web-springboot</module>
+        <module>web-jlhttp</module>
+        <module>web-nanohttpd</module>
     </modules>
 
 </project>

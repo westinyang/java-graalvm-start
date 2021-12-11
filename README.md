@@ -45,6 +45,17 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 | 编译耗时（native-image） | 24.786s | 93.455s | 99.434s |
 | 可执行文件大小（7z压缩） | 8.03m (7z : 1.68m) | 62.7m (7z : 13.1m) | 66.5m (7z : 13.9m) |
 
+**新增模块**
+
+> 新增模块简单介绍和基本测试数据
+
+- [web-jlhttp](web-jlhttp)
+    - 仅3000行Java代码实现的嵌入式HTTPServer，有些时候我们仅仅是想写一两个简单的接口打包发布，使用Spring等框架真的是觉得小题大做了。
+    - jarfile：`52k`，可执行文件大小：`12.9m`， 7z：`2.9m`
+- [web-nanohttpd](web-nanohttpd)
+    - 另一种轻量级且设计良好的嵌入式HTTPServer实现，该库常用语Android应用开发，不过在这里配合GraalVM一样能正常使用。
+    - jarfile：`54k`，可执行文件大小：`12.8m`， 7z：`2.9m`
+
 ## 开发环境
 
 > 以下是我本机的开发环境，理论上windows、linux、mac都是支持的（注意不同平台的 GraalVM SDK 和 native-image的依赖是不一样的）。

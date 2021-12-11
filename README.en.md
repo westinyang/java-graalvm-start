@@ -45,6 +45,17 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 | Time-consuming to start (native-image) | 24.786s | 93.455s | 99.434s |
 | Executable file size (7z compression) | 8.03m (7z : 1.68m) | 62.7m (7z : 13.1m) | 66.5m (7z : 13.9m) | 
 
+**New module**
+
+> Brief introduction of new modules and basic test data
+
+- [web-jlhttp](web-jlhttp)
+    - Embedded HTTP Server implemented with only 3000 lines of Java code, sometimes we just want to write one or two simple interfaces for packaging and publishing. Using frameworks such as Spring is really a fuss.
+    - jarfile：`52k`，Executable file size：`12.9m`， 7z：`2.9m`
+- [web-nanohttpd](web-nanohttpd)
+    - Another lightweight and well-designed embedded HTTP Server implementation. The library is commonly used for Android application development, but it can be used normally with Graal VM here.
+    - jarfile：`54k`，Executable file size：`12.8m`， 7z：`2.9m`
+
 ## Development environment
 
 > The following is the development environment of my machine. In theory, windows, linux and mac are all supported (note that the dependencies of GraalVM SDK and native-image of different platforms are different).
