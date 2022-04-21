@@ -72,6 +72,9 @@
                     <reflectionList>
                         <list>com.mueeee.desktopjavafx.ctrl.MainCtrl</list>
                     </reflectionList>
+                    <nativeImageArgs>
+                        <arg>--allow-incomplete-classpath</arg>
+                    </nativeImageArgs>
                 </configuration>
                 <executions>
                     <execution>

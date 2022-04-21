@@ -173,3 +173,4 @@ sudo apt install pkg-config libgl-dev libglib2.0-dev libgtk-3-dev libpango1.0-de
     - [Windows 下使用 GraalVM 将 JavaFX 应用编译成 exe](https://www.cnblogs.com/dehai/p/14258391.html)
     - [Spring Boot as GraalVM Native Images](https://blog.codecentric.de/en/2020/05/spring-boot-graalvm/) `推荐阅读` `可能需要“出国留学”工具`
     - [Spring Boot GraalVM Native Image builds with the native-image-maven-plugin](https://blog.codecentric.de/en/2020/05/spring-boot-graalvm/) `推荐阅读` `可能需要“出国留学”工具`
+    - [如何借助 Graalvm 和 Picocli 构建 Java 编写的原生 CLI 应用](https://www.infoq.cn/article/4RRJuxPRE80h7YsHZJtX) `推荐阅读`

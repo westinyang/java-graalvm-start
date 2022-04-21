@@ -173,3 +173,4 @@ For a more detailed description of different platform configurations and depende
     - [Use GraalVM under Windows to compile JavaFX applications into exe](https://www.cnblogs.com/dehai/p/14258391.html)
     - [Spring Boot as GraalVM Native Images](https://blog.codecentric.de/en/2020/05/spring-boot-graalvm/) `Recommended reading`
     - [Spring Boot GraalVM Native Image builds with the native-image-maven-plugin](https://blog.codecentric.de/en/2020/05/spring-boot-graalvm/) `Recommended reading`
+    - [How to build native CLI applications written in Java with Graalvm and Picocli](https://www.infoq.cn/article/4RRJuxPRE80h7YsHZJtX) `推荐阅读`
