@@ -55,6 +55,9 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 - [web-nanohttpd](web-nanohttpd)
     - 另一种轻量级且设计良好的嵌入式HTTPServer实现，该库常用语Android应用开发，不过在这里配合GraalVM一样能正常使用。
     - jarfile：`54k`，可执行文件大小：`12.8m`， 7z：`2.9m`
+- [cli-picocli](cli-picocli)
+    - Picocli 是一个现代框架，用于轻松构建功能强大、用户友好、支持 GraalVM 的命令行应用程序。它支持颜色、自动补全、子命令等。
+    - jarfile: `676k`，可执行文件大小：`18.2m`，7z：`4.0m`
 
 ## 开发环境
 

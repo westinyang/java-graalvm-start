@@ -22,6 +22,7 @@
         <module>web-springboot</module>
         <module>web-jlhttp</module>
         <module>web-nanohttpd</module>
+        <module>cli-picocli</module>
     </modules>
 
 </project>

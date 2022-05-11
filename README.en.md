@@ -55,6 +55,9 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 - [web-nanohttpd](web-nanohttpd)
     - Another lightweight and well-designed embedded HTTP Server implementation. The library is commonly used for Android application development, but it can be used normally with Graal VM here.
     - jarfile：`54k`，Executable file size：`12.8m`， 7z：`2.9m`
+- [cli-picocli](cli-picocli)
+    - Picocli is a modern framework for building powerful, user-friendly, GraalVM-enabled command line apps with ease. It supports colors, autocompletion, subcommands, and more.
+    - jarfile: `676k`，Executable file size：`18.2m`，7z：`4.0m`
 
 ## Development environment
 
