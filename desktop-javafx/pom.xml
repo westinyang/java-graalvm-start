@@ -15,12 +15,19 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <javafx.version>17.0.1</javafx.version>
-        <!-- 大于1.0.11，构建失败 -->
-        <gluonfx-maven-plugin.version>1.0.11</gluonfx-maven-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <javafx.version>18.0.1</javafx.version>
+        <!--
+            插件更新日志：https://docs.gluonhq.com/#_what_is_new
+                - 大于1.0.11，构建失败，找不到rc.exe，需要配置环境变量：C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64
+
+            C:\Users\用户名\.gluon\substrate
+            https://download2.gluonhq.com/substrate/javafxstaticsdk/openjfx-19-ea+8-windows-x86_64-static.zip
+         -->
+        <gluonfx-maven-plugin.version>1.0.14</gluonfx-maven-plugin.version>
         <start-class>com.mueeee.desktopjavafx.App</start-class>
     </properties>
 
@@ -80,6 +87,9 @@
                     <nativeImageArgs>
                         <arg>--allow-incomplete-classpath</arg>
                     </nativeImageArgs>
+                    <releaseConfiguration>
+                        <packageType>windows</packageType>
+                    </releaseConfiguration>
                 </configuration>
                 <executions>
                     <execution>
