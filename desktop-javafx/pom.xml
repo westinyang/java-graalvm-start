@@ -19,7 +19,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
-        <javafx.version>18.0.1</javafx.version>
+        <javafx.version>17.0.1</javafx.version>
         <!--
             插件更新日志：https://docs.gluonhq.com/#_what_is_new
                 - 大于1.0.11，构建失败，找不到rc.exe，需要配置环境变量：C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64
@@ -70,8 +70,8 @@
                     <mainClass>${start-class}</mainClass>
                     <!--
                     <javaStaticSdkVersion>11-ea+10</javaStaticSdkVersion>
-                    <javafxStaticSdkVersion>19-ea+4</javafxStaticSdkVersion>
                     -->
+                    <javafxStaticSdkVersion>${javafx.version}</javafxStaticSdkVersion>
                     <!-- JavaFx 中使用 ResourceBundle.getBundle("xxxxxx") 的路径，如果没有则不需要配置 -->
                     <!--<bundlesList>
                         <list>com.mueeee.desktopjavafx</list>
