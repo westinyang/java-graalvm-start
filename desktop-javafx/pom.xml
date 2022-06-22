@@ -87,9 +87,6 @@
                     <nativeImageArgs>
                         <arg>--allow-incomplete-classpath</arg>
                     </nativeImageArgs>
-                    <releaseConfiguration>
-                        <packageType>windows</packageType>
-                    </releaseConfiguration>
                 </configuration>
                 <executions>
                     <execution>
