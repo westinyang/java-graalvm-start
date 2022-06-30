@@ -11,21 +11,6 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 
 > GraalVM让Java再次变得强大，使用native-image把程序编译为目标平台的可执行文件，脱离jvm直接运行，启动速度飞快，内存负载也很低。
 
-## 更新日志
-
-> 时隔九个月，再次关注GraalVM，发现以前实验性的Maven插件大多都已经变更，更新记录一波~  
-> 如果需要参考旧版代码，请手动切换到 `graalvm-21.0.0.2` 标签。  
-> 另外最近刚换了台12代U `i7 12700KF` 的主机，实测比我之前用的 `i7 7700` 编译速度快了2倍还要多，比如 `cli-normal` 模块实测编译耗时10s左右。下面模块概览内的测试数据暂时就不改了，还是之前机器的测试数据。
-
-- **2021-03-05** GraalVM-21.0.0.2 (Java 8 or Java 11) `首次提交`
-    - org.graalvm.nativeimage/native-image-maven-plugin:21.0.0.2 `cli`
-    - com.gluonhq/client-maven-plugin:0.1.38 `javafx 15.0.1`
-    - org.springframework.experimental/spring-graalvm-native:0.8.5 `springboot 2.4.3`
-- **2021-12-10** GraalVM-21.3.0 (Java 11 or Java 17)
-    - [org.graalvm.buildtools/native-maven-plugin:0.9.8](https://graalvm.github.io/native-build-tools/latest/index.html) `cli`
-    - [com.gluonhq/gluonfx-maven-plugin:1.0.10](https://docs.gluonhq.com/#_gluonfx_plugin_for_maven) `javafx 17.0.1`
-    - [org.springframework.experimental/spring-native:0.11.0](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/index.html) `springboot 2.6.1`
-
 ## 模块概览
 
 > 体验我已经编译好的可执行文件（Windows、Linux、Mac），[点此下载](https://gitee.com/westinyang/java-graalvm-start/releases/v1.0)。  
@@ -58,6 +43,17 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 - [cli-picocli](cli-picocli)
     - Picocli 是一个现代框架，用于轻松构建功能强大、用户友好、支持 GraalVM 的命令行应用程序。它支持颜色、自动补全、子命令等。
     - jarfile: `676k`，可执行文件大小：`18.2m`，7z：`4.0m`
+
+## 插件变更
+
+- **2021-03-05** GraalVM-21.0.0.2 (Java 8 or Java 11) `首次提交`
+  - org.graalvm.nativeimage/native-image-maven-plugin:21.0.0.2 `cli`
+  - com.gluonhq/client-maven-plugin:0.1.38 `javafx 15.0.1`
+  - org.springframework.experimental/spring-graalvm-native:0.8.5 `springboot 2.4.3`
+- **2021-12-10** GraalVM-21.3.0 (Java 11 or Java 17)
+  - [org.graalvm.buildtools/native-maven-plugin:0.9.8](https://graalvm.github.io/native-build-tools/latest/index.html) `cli`
+  - [com.gluonhq/gluonfx-maven-plugin:1.0.10](https://docs.gluonhq.com/#_gluonfx_plugin_for_maven) `javafx 17.0.1`
+  - [org.springframework.experimental/spring-native:0.11.0](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/index.html) `springboot 2.6.1`
 
 ## 开发环境
 
@@ -134,7 +130,7 @@ sudo apt install pkg-config libgl-dev libglib2.0-dev libgtk-3-dev libpango1.0-de
 
 **Mac**
 
-- TODO
+- xcode-select --install
 
 有关不同平台配置和依赖更详细的说明，请参考：
 - [install-native-image](https://www.graalvm.org/reference-manual/native-image/#install-native-image) `构建Java应用时参考`
