@@ -18,7 +18,7 @@
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <!-- https://search.maven.org/artifact/org.openjfx/javafx -->
         <javafx.version>17.0.1</javafx.version>
         <!--
             插件更新日志：https://docs.gluonhq.com/#_what_is_new
@@ -85,7 +85,10 @@
                         <list>com.mueeee.desktopjavafx.ctrl.MainCtrl</list>
                     </reflectionList>
                     <nativeImageArgs>
-                        <arg>--allow-incomplete-classpath</arg>
+                        <!-- “快速构建”模式，以减少在开发过程中生成本机可执行文件所需的时间。请注意，此模式可能会对峰值性能和生成的可执行文件的大小产生负面影响，因此建议仅用于开发目的。 -->
+                        <!--<arg>-Ob</arg>-->
+                        <!-- 现在默认启用并已弃用，因为不再需要它。 -->
+                        <!--<arg>&#45;&#45;allow-incomplete-classpath</arg>-->
                     </nativeImageArgs>
                 </configuration>
                 <executions>
