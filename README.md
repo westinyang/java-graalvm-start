@@ -5,6 +5,10 @@
 
 [English document](README.en.md)
 
+由 JetBrains 提供的 [开源开发许可证](https://www.jetbrains.com/community/opensource/#support?from=https://github.com/westinyang/java-graalvm-start) 产品订阅
+
+![JetBrains logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
+
 ## 介绍
 
 GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项目，并使用native-image技术把Java代码静态编译为独立可执行文件（本机映像）。
