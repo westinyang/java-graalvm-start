@@ -80,6 +80,11 @@
                     <buildArgs>
                         --no-fallback
                     </buildArgs>
+                    <!-- GraalVM 可达性元数据支持 -->
+                    <!-- https://github.com/oracle/graalvm-reachability-metadata -->
+                    <metadataRepository>
+                        <enabled>true</enabled>
+                    </metadataRepository>
                     <!--
                     <agent>
                         <enabled>true</enabled>
