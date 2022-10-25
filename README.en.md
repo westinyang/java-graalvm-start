@@ -130,6 +130,10 @@ Download Graal VM and configure environment variables. In addition to Graal VM, 
 ```shell script
 sudo apt install pkg-config libgl-dev libglib2.0-dev libgtk-3-dev libpango1.0-dev libx11-dev libxtst-dev libasound2-dev libavcodec-dev libavformat-dev libavutil-dev
 ```
+- Ubuntu 20 also needs to install the following libraries
+```shell
+sudo apt install g++-multilib
+```
 - For other Linux distributions, please check which dependent libraries are missing for errors when packaging, and install them yourself.
 
 **Mac**
