@@ -165,8 +165,8 @@ sudo apt install g++-multilib
 ## 技术交流
 
 - Q群：[707416319](https://qm.qq.com/cgi-bin/qm/qr?k=uSAXH8sKqQnF_cvDSF4T8IN7tSqabAJ3&jump_from=webapi)
-- 知识星球：https://t.zsxq.com/07r8E7t2c
-[![https://t.zsxq.com/07r8E7t2c](./screenshot/3.jpg)](https://t.zsxq.com/07r8E7t2c)
+- 知识星球：https://t.zsxq.com/07r8E7t2c  
+<a href="https://t.zsxq.com/07r8E7t2c"><img src="./screenshot/3.jpg" width="400"></a>
 
 ## 参考资料
 

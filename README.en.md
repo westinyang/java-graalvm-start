@@ -165,8 +165,8 @@ For a more detailed description of different platform configurations and depende
 ## Technology Exchange
 
 - QQ Group: [707416319](https://qm.qq.com/cgi-bin/qm/qr?k=uSAXH8sKqQnF_cvDSF4T8IN7tSqabAJ3&jump_from=webapi)
-- ZSXQ：https://t.zsxq.com/07r8E7t2c
-[![https://t.zsxq.com/07r8E7t2c](./screenshot/3.jpg)](https://t.zsxq.com/07r8E7t2c)
+- ZSXQ：https://t.zsxq.com/07r8E7t2c  
+<a href="https://t.zsxq.com/07r8E7t2c"><img src="./screenshot/3.jpg" width="400"></a>
 
 ## Reference
 
