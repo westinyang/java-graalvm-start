@@ -103,4 +103,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--<profiles>
+        <profile>
+            <id>native</id>
+            <build>
+                <plugins>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>-->
 </project>

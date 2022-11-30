@@ -84,6 +84,11 @@
                         <!-- java.net.MalformedURLException: Accessing an URL protocol that was not enabled. The URL protocol http is supported but not enabled by default. It must be enabled by adding the - -enable-url-protocols=http option to the native-image command. -->
                         --enable-url-protocols=http
                     </buildArgs>
+                    <!-- GraalVM 可达性元数据支持 -->
+                    <!-- https://github.com/oracle/graalvm-reachability-metadata -->
+                    <metadataRepository>
+                        <enabled>true</enabled>
+                    </metadataRepository>
                     <!--
                     <agent>
                         <enabled>true</enabled>
