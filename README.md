@@ -47,6 +47,9 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 - [cli-picocli](cli-picocli)
     - Picocli 是一个现代框架，用于轻松构建功能强大、用户友好、支持 GraalVM 的命令行应用程序。它支持颜色、自动补全、子命令等。
     - jarfile: `676k`，可执行文件大小：`18.2m`，7z：`4.0m`
+- [web-springboot3](web-springboot3)
+    - Spring Boot 3.0 已正式发布，支持 GraalVM native images，取代实验性的 Spring Native 项目。
+    - jarfile: `19.2m`，可执行文件大小：`72.0m`，7z：`16.4m`
 
 ## 插件变更
 

@@ -47,6 +47,9 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 - [cli-picocli](cli-picocli)
     - Picocli is a modern framework for building powerful, user-friendly, GraalVM-enabled command line apps with ease. It supports colors, autocompletion, subcommands, and more.
     - jarfile: `676k`，Executable file size：`18.2m`，7z：`4.0m`
+- [web-springboot3](web-springboot3)
+    - Spring Boot 3.0 has been officially released, supporting Graalvm Native Images, replacing experimental Spring Native projects.
+    - jarfile: `19.2m`，Executable file size：`72.0m`，7z：`16.4m`
 
 ## Plugin changes
 
