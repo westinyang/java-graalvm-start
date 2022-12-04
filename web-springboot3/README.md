@@ -19,5 +19,5 @@
 
 ```shell
 # profile native 使用了 pluginManagement，不会直接显示native插件，暂时只能通过命令调用
-mvn -Pnative native:compile
+mvn -Pnative native:compile -DskipTests
 ```

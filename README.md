@@ -68,16 +68,13 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
 
 - Windows 10 (CPU: i7-7700, RAM: 16G)
 - IntelliJ IDEA 2020
-- jdk-11.0.10 `其实也可以不用，因为GraalVM是自带OpenJDK的`
 - graalvm-ce-java11-21.3.0
-- Visual Sutdio 2019
+- Visual Studio 2019
 
 ## 环境配置（Windows）
 
-> System、IDE、JDK 这三个就不用说了，直接跳过...
-
 **Graal VM**
-- [下载 Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0)
+- [下载 Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases)
 - 设置GraalVM环境变量（注意JAVA_HOME也要指向GRAALVM_HOME）：
 ``` bat
 GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.3.0

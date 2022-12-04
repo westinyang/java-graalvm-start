@@ -68,16 +68,13 @@ Graal VM best practice, use Java to develop CLI, Desktop (Java FX), Web (Spring 
 
 - Windows 10 (CPU: i7-7700, RAM: 16G)
 - IntelliJ IDEA 2020
-- jdk-11.0.10 `In fact, you don’t need to, because GraalVM comes with OpenJDK`
 - graalvm-ce-java11-21.3.0
-- Visual Sutdio 2019
+- Visual Studio 2019
 
 ## Environment configuration (Windows)
 
-> Needless to say, System, IDE, and JDK, just skip...
-
 **Graal VM**
-- [Download Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0)
+- [Download Graal VM SDK](https://github.com/graalvm/graalvm-ce-builds/releases)
 - Set GraalVM environment variables (note that JAVA_HOME also points to GRAALVM_HOME):
 ``` bat
 GRAALVM_HOME = C:\path\to\graalvm-ce-java11-21.3.0
