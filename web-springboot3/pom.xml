@@ -51,6 +51,8 @@
 				<configuration>
 					<buildArgs>
 						<arg>--no-fallback</arg>
+						<!-- org.apache.poi: Caused by: java.nio.charset.UnsupportedCharsetException: CP1252 -->
+						<!--<arg>-H:+AddAllCharsets</arg>-->
 					</buildArgs>
 				</configuration>
 			</plugin>

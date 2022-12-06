@@ -85,6 +85,8 @@
                     <mainClass>${start-class}</mainClass>
                     <buildArgs>
                         <arg>--no-fallback</arg>
+                        <!-- org.apache.poi: Caused by: java.nio.charset.UnsupportedCharsetException: CP1252 -->
+                        <!--<arg>-H:+AddAllCharsets</arg>-->
                     </buildArgs>
                     <!-- GraalVM 可达性元数据支持 -->
                     <!-- https://github.com/oracle/graalvm-reachability-metadata -->

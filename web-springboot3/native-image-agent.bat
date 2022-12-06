@@ -1,1 +1,1 @@
-java -DspringAot=true -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image -jar ./target/web-springboot3-1.0.jar
+java -Dspring.aot.enabled=true -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image -jar ./target/web-springboot3-1.0.jar
