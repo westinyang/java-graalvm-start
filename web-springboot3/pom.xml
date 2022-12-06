@@ -45,33 +45,15 @@
 
 	<build>
 		<plugins>
-			<!--<plugin>
+			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>
 				<artifactId>native-maven-plugin</artifactId>
 				<configuration>
-					<skip>false</skip>
-					<useArgFile>false</useArgFile>
-					<imageName>${project.artifactId}</imageName>
-					<mainClass>${start-class}</mainClass>
 					<buildArgs>
-						<arg>&#45;&#45;no-fallback</arg>
+						<arg>--no-fallback</arg>
 					</buildArgs>
-					&lt;!&ndash; GraalVM 可达性元数据支持 &ndash;&gt;
-					&lt;!&ndash; https://github.com/oracle/graalvm-reachability-metadata &ndash;&gt;
-					<metadataRepository>
-						<enabled>true</enabled>
-					</metadataRepository>
 				</configuration>
-				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<goals>
-							<goal>build</goal>
-						</goals>
-						<phase>package</phase>
-					</execution>
-				</executions>
-			</plugin>-->
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
