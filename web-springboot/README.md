@@ -1,0 +1,2 @@
+- Spring Boot 2.7.1 ~ Spring Native 0.12.1 之前长期使用
+- Spring Boot 2.7.7 ~ Spring Native 0.12.2 最新匹配可用 `2023`
