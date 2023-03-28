@@ -27,7 +27,7 @@
             C:\Users\用户名\.gluon\substrate
             https://download2.gluonhq.com/substrate/javafxstaticsdk/openjfx-19-ea+8-windows-x86_64-static.zip
          -->
-        <gluonfx-maven-plugin.version>1.0.14</gluonfx-maven-plugin.version>
+        <gluonfx-maven-plugin.version>1.0.18</gluonfx-maven-plugin.version>
         <start-class>com.mueeee.desktopjavafx.App</start-class>
     </properties>
 

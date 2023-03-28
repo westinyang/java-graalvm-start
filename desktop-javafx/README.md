@@ -1,0 +1,1 @@
+- [Add Icon to Windows native binary](https://github.com/gluonhq/substrate/pull/1090#issuecomment-1479999989)
