@@ -23,7 +23,7 @@
         大于 0.9.9 的版本会出现构建失败，https://github.com/graalvm/native-build-tools/issues/233
         需要增加 <useArgFile>false</useArgFile>
         -->
-        <native.maven.plugin.version>0.9.18</native.maven.plugin.version>
+        <native.maven.plugin.version>0.9.20</native.maven.plugin.version>
         <start-class>com.mueeee.clinormal.CliNormalApp</start-class>
     </properties>
 
