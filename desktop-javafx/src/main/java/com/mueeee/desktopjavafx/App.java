@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,6 +36,13 @@ public class App extends Application {
     public void init() throws Exception {
         System.out.println("init");
         super.init();
+        // 设置系统屏幕缩放比例
+        try {
+            var scaleX =  Screen.getScreens().get(0).getOutputScaleX();
+            System.setProperty("glass.win.uiScale", String.valueOf(scaleX));
+        } catch (Exception ignored) {
+            System.setProperty("glass.win.uiScale", "1.0");
+        }
         // 在非JavaFX应用程序主线程上运行指定的Runnable
         /*Platform.runLater(() -> {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
