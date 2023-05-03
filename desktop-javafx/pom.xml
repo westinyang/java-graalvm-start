@@ -97,6 +97,17 @@
                         -->
                         <arg>--add-exports=org.graalvm.nativeimage.builder/com.oracle.svm.core.jdk=ALL-UNNAMED</arg>
                     </nativeImageArgs>
+                    <releaseConfiguration>
+                        <!-- all targets -->
+                        <!--<packageType></packageType>-->
+                        <description>desktop-javafx</description>
+                        <vendor>muetech</vendor>
+                        <version>${version}</version>
+                        <!-- macOS -->
+                        <macAppStore>false</macAppStore>
+                        <macSigningUserName>muetech</macSigningUserName>
+                        <!--<macAppCategory>public.app-category.utilities</macAppCategory>-->
+                    </releaseConfiguration>
                 </configuration>
                 <executions>
                     <execution>
