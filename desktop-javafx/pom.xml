@@ -19,7 +19,8 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- https://search.maven.org/artifact/org.openjfx/javafx -->
-        <javafx.version>17.0.1</javafx.version>
+        <javafx.version>21-ea+5</javafx.version>
+        <javafx.staticSdk.version>21-ea+5</javafx.staticSdk.version>
         <!--
             插件更新日志：https://docs.gluonhq.com/#_what_is_new
                 - 大于1.0.11，构建失败，找不到rc.exe，需要配置环境变量：C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64
@@ -71,7 +72,7 @@
                     <!--
                     <javaStaticSdkVersion>11-ea+10</javaStaticSdkVersion>
                     -->
-                    <javafxStaticSdkVersion>${javafx.version}</javafxStaticSdkVersion>
+                    <javafxStaticSdkVersion>${javafx.staticSdk.version}</javafxStaticSdkVersion>
                     <!-- JavaFx 中使用 ResourceBundle.getBundle("xxxxxx") 的路径，如果没有则不需要配置 -->
                     <!--<bundlesList>
                         <list>com.mueeee.desktopjavafx</list>
@@ -89,6 +90,12 @@
                         <!--<arg>-Ob</arg>-->
                         <!-- 现在默认启用并已弃用，因为不再需要它。 -->
                         <!--<arg>&#45;&#45;allow-incomplete-classpath</arg>-->
+                        <!--
+                        2023-05-04，GraalVM-22.3.0
+                        修复在Linux上编译报错：Fatal error: java.lang.IllegalAccessError: class com.gluonhq.substrate.feature.GluonFeature (in unnamed module @0x6c1832aa) cannot access class com.oracle.svm.core.jdk.NativeLibrarySupport (in module org.graalvm.nativeimage.builder) because module org.graalvm.nativeimage.builder does not export com.oracle.svm.core.jdk to unnamed module @0x6c1832aa
+                        https://github.com/oracle/graal/issues/5265
+                        -->
+                        <arg>--add-exports=org.graalvm.nativeimage.builder/com.oracle.svm.core.jdk=ALL-UNNAMED</arg>
                     </nativeImageArgs>
                 </configuration>
                 <executions>
