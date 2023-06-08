@@ -19,6 +19,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- https://search.maven.org/artifact/org.openjfx/javafx -->
+        <!-- 17.0.1, 21-ea+5 -->
         <javafx.version>21-ea+5</javafx.version>
         <javafx.staticSdk.version>21-ea+5</javafx.staticSdk.version>
         <!--

@@ -12,6 +12,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 /**
  * JavaFx Application
@@ -28,6 +29,12 @@ public class App extends Application {
     private static Scene scene;
 
     public static void main(String[] args) {
+        // 解决Linux上编译为native-image时运行错误：
+        String osName = System.getProperty("os.name", "");
+        if (Pattern.matches("Linux.*", osName)) {
+            System.setProperty("prism.forceGPU", "true");
+        }
+        // Init & Launch
         AppConfig.init();
         launch();
     }
