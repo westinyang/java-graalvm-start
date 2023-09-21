@@ -83,6 +83,7 @@
                         --no-fallback
                         <!-- java.net.MalformedURLException: Accessing an URL protocol that was not enabled. The URL protocol http is supported but not enabled by default. It must be enabled by adding the - -enable-url-protocols=http option to the native-image command. -->
                         --enable-url-protocols=http
+                        -H:-CheckToolchain
                     </buildArgs>
                     <!-- GraalVM 可达性元数据支持 -->
                     <!-- https://github.com/oracle/graalvm-reachability-metadata -->
@@ -99,7 +100,8 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>build</goal>
+                            <!-- [WARNING] 'native:build' goal is deprecated. Use 'native:compile-no-fork' instead. -->
+                            <goal>compile-no-fork</goal>
                         </goals>
                         <phase>package</phase>
                     </execution>
