@@ -42,7 +42,7 @@ GraalVM最佳实践，使用Java开发CLI、Desktop(JavaFX)、Web(SpringBoot)项
     - 仅3000行Java代码实现的嵌入式HTTPServer，有些时候我们仅仅是想写一两个简单的接口打包发布，使用Spring等框架真的是觉得小题大做了。
     - jarfile：`52k`，可执行文件大小：`12.9m`， 7z：`2.9m`
 - [web-nanohttpd](web-nanohttpd)
-    - 另一种轻量级且设计良好的嵌入式HTTPServer实现，该库常用语Android应用开发，不过在这里配合GraalVM一样能正常使用。
+    - 另一种轻量级且设计良好的嵌入式HTTPServer实现，该库常用于Android应用开发，不过在这里配合GraalVM一样能正常使用。
     - jarfile：`54k`，可执行文件大小：`12.8m`， 7z：`2.9m`
 - [cli-picocli](cli-picocli)
     - Picocli 是一个现代框架，用于轻松构建功能强大、用户友好、支持 GraalVM 的命令行应用程序。它支持颜色、自动补全、子命令等。
