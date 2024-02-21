@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- https://search.maven.org/artifact/org.openjfx/javafx -->
@@ -29,7 +29,7 @@
             C:\Users\用户名\.gluon\substrate
             https://download2.gluonhq.com/substrate/javafxstaticsdk/openjfx-19-ea+8-windows-x86_64-static.zip
          -->
-        <gluonfx-maven-plugin.version>1.0.18</gluonfx-maven-plugin.version>
+        <gluonfx-maven-plugin.version>1.0.22</gluonfx-maven-plugin.version>
         <start-class>com.mueeee.desktopjavafx.App</start-class>
     </properties>
 
@@ -89,14 +89,25 @@
                     <nativeImageArgs>
                         <!-- “快速构建”模式，以减少在开发过程中生成本机可执行文件所需的时间。请注意，此模式可能会对峰值性能和生成的可执行文件的大小产生负面影响，因此建议仅用于开发目的。 -->
                         <!--<arg>-Ob</arg>-->
+
                         <!-- 现在默认启用并已弃用，因为不再需要它。 -->
                         <!--<arg>&#45;&#45;allow-incomplete-classpath</arg>-->
+
                         <!--
                         2023-05-04，GraalVM-22.3.0
                         修复在Linux上编译报错：Fatal error: java.lang.IllegalAccessError: class com.gluonhq.substrate.feature.GluonFeature (in unnamed module @0x6c1832aa) cannot access class com.oracle.svm.core.jdk.NativeLibrarySupport (in module org.graalvm.nativeimage.builder) because module org.graalvm.nativeimage.builder does not export com.oracle.svm.core.jdk to unnamed module @0x6c1832aa
                         https://github.com/oracle/graal/issues/5265
                         -->
                         <arg>--add-exports=org.graalvm.nativeimage.builder/com.oracle.svm.core.jdk=ALL-UNNAMED</arg>
+
+                        <!--
+                        Native-image building on Windows currently only supports target architecture: AMD64 (?? unsupported))
+                        GluonFx + GraalVM 21，21之前的版本没有此问题，非GluonFx插件项目的没有此问题
+                        1 目前有一些解决方案，VS语言包删除中文，添加英文
+                        2 系统设置 - 时间和语言 - 语言和区域 - 管理语言设置 - 更改系统区域设置 - 勾选：Beta版本：使用 Unicode UTF-8 提供全球语言支持
+                        3 添加参数 -H:-CheckToolchain，跳过环境检查
+                         -->
+                        <arg>-H:-CheckToolchain</arg>
                     </nativeImageArgs>
                     <releaseConfiguration>
                         <!-- all targets -->
