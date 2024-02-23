@@ -164,8 +164,8 @@ For a more detailed description of different platform configurations and depende
 
 ## Technology Exchange
 
-- Q群: [707416319](https://qm.qq.com/cgi-bin/qm/qr?k=uSAXH8sKqQnF_cvDSF4T8IN7tSqabAJ3&jump_from=webapi)
-- 知识星球：[码力全开](https://docs.qq.com/doc/DQVlkcnlQUEFiQ3Rl) 
+- Q Group: [707416319](https://qm.qq.com/cgi-bin/qm/qr?k=uSAXH8sKqQnF_cvDSF4T8IN7tSqabAJ3&jump_from=webapi)
+- About the author: [I'm westinyang](https://kaihongpai.feishu.cn/wiki/CqWLwJRadibxztkrIWZcogWxnXd)
 
 ## Reference
 
