@@ -49,6 +49,8 @@
 						<!-- org.apache.poi: Caused by: java.nio.charset.UnsupportedCharsetException: CP1252 -->
 						<!--<arg>-H:+AddAllCharsets</arg>-->
 						<arg>-H:-CheckToolchain</arg>
+						<!-- https://github.com/spring-projects/spring-boot/issues/36576 -->
+						<arg>-march=compatibility</arg>
 					</buildArgs>
 				</configuration>
 			</plugin>
