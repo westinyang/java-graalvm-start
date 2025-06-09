@@ -18,7 +18,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <graalvm.version>22.3.0</graalvm.version>
-        <native.maven.plugin.version>0.9.20</native.maven.plugin.version>
+        <native.maven.plugin.version>0.9.27</native.maven.plugin.version>
         <start-class>com.mueeee.webnanohttpd.WebNanoHttpdApp</start-class>
     </properties>
 
