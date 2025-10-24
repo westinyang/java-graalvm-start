@@ -19,9 +19,11 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- https://search.maven.org/artifact/org.openjfx/javafx -->
-        <!-- 17.0.1, 21-ea+5 -->
-        <javafx.version>21-ea+5</javafx.version>
-        <javafx.staticSdk.version>21-ea+5</javafx.staticSdk.version>
+        <!-- 21-ea+5, 24-ea+5 -->
+        <javafx.version>24-ea+5</javafx.version>
+        <!-- https://docs.gluonhq.com/#_what_is_new -->
+        <!-- 21-ea+5, 24-ea+7.1 -->
+        <javafx.staticSdk.version>24-ea+7.1</javafx.staticSdk.version>
         <!--
             插件更新日志：https://docs.gluonhq.com/#_what_is_new
                 - 大于1.0.11，构建失败，找不到rc.exe，需要配置环境变量：C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64
@@ -29,7 +31,7 @@
             C:\Users\用户名\.gluon\substrate
             https://download2.gluonhq.com/substrate/javafxstaticsdk/openjfx-19-ea+8-windows-x86_64-static.zip
          -->
-        <gluonfx-maven-plugin.version>1.0.22</gluonfx-maven-plugin.version>
+        <gluonfx-maven-plugin.version>1.0.27</gluonfx-maven-plugin.version>
         <start-class>com.mueeee.desktopjavafx.App</start-class>
     </properties>
 
